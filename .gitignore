@@ -49,9 +49,4 @@ firestore-debug.log
 ui-debug.log
 
 # Gemini / AI local metadata
-.gemini/
-ai_guidance/
-demo/
-resume/
-.esllintrc.cjs
-.firestore.rules
+
