@@ -27,6 +27,11 @@ build/
 .env.test.local
 .env.production.local
 
+# Personal Data & CV documents
+resume/
+ai_guidance/
+demo/
+
 # Editor & IDE directories
 .vscode/*
 !.vscode/extensions.json
@@ -50,8 +55,3 @@ ui-debug.log
 
 # Gemini / AI local metadata
 .gemini/
-ai_guidance/
-demo/
-resume/
-.esllintrc.cjs
-.firestore.rules
