@@ -6,7 +6,7 @@ import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 const AuthContext = createContext();
 
 // Define who is allowed to access the admin panel
-const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL || 'olimpiu.ticudean@gmail.com';
+const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL || '';
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);

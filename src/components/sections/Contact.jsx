@@ -81,7 +81,7 @@ export default function Contact() {
             {/* Send Message Button */}
             <div className="mt-2 text-left">
               <a 
-                href="mailto:ticudean.o@gmail.com"
+                href={`mailto:${import.meta.env.VITE_ADMIN_EMAIL || 'contact@example.com'}`}
                 className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-text text-bg rounded-2xl font-bold uppercase tracking-widest text-xs hover:opacity-95 active:scale-[0.98] transition-all duration-200 shadow-xl group"
               >
                 <Icon name="Mail" size={16} />
