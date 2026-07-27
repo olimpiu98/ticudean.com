@@ -1,0 +1,14 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Allow public read access to all portfolio documents
+    // Allow write access to any authenticated user (Admin)
+    match /{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+  }
+}

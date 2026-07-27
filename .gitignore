@@ -1,0 +1,57 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Production & Build outputs
+dist/
+dist-ssr/
+build/
+*.local
+
+# Environment variables & Secret Keys
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor & IDE directories
+.vscode/*
+!.vscode/extensions.json
+.idea
+.ds_store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary / OS junk
+Thumbs.db
+[Dd]esktop.ini
+
+# Firebase local emulator & logs
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Gemini / AI local metadata
+.gemini/
+ai_guidance/
+demo/
+resume/
+.esllintrc.cjs
+.firestore.rules
