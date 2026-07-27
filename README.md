@@ -136,13 +136,13 @@ perosnal_data/              ← (legacy typo — kept for compatibility)
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /perosnal_data/{document=**} {
+    match /personal_data/{document=**} {
       // Public read — anyone can view the portfolio
       allow read: if true;
 
       // Write — only the authenticated admin
       allow write: if request.auth != null
-                   && request.auth.token.email == 'olimpiu.ticudean@gmail.com';
+                   && request.auth.token.email == 'your_admin_email@domain.com';
     }
   }
 }
@@ -152,7 +152,7 @@ service cloud.firestore {
 
 - **Provider:** Google Sign-In (popup flow).
 - **Purpose:** Admin-only. Public visitors never need to log in.
-- **Admin whitelist:** Defined in `src/contexts/AuthContext.jsx` via the `ADMIN_EMAILS` array.
+- **Admin whitelist:** Defined in `src/contexts/AuthContext.jsx` via the `VITE_ADMIN_EMAIL` environment variable.
 - **Enable in Firebase Console:** Authentication → Sign-in method → Google → Enable.
 
 ---
@@ -162,13 +162,13 @@ service cloud.firestore {
 Create a `.env` file in the project root:
 
 ```env
-VITE_FIREBASE_API_KEY=AIzaSyB-9HT2S03lbN_WcdfisxzSPbcrZRwMk4U
-VITE_FIREBASE_AUTH_DOMAIN=ticudeancom.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=ticudeancom
-VITE_FIREBASE_STORAGE_BUCKET=ticudeancom.firebasestorage.app
-VITE_FIREBASE_MESSAGING_SENDER_ID=675620919777
-VITE_FIREBASE_APP_ID=1:675620919777:web:a75d9ee4c545bb544adaa0
-VITE_ADMIN_EMAIL=olimpiu.ticudean@gmail.com
+VITE_FIREBASE_API_KEY=your_firebase_api_key_here
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project.firebasestorage.app
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_ADMIN_EMAIL=your_admin_email@domain.com
 ```
 
 > Vite only exposes variables prefixed with `VITE_`. Firebase client keys are safe to expose — security is enforced by Firestore rules.
