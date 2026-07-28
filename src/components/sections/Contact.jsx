@@ -43,7 +43,7 @@ export default function Contact() {
             </a>
 
             <a 
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/olimpiu-ticudean"
               target="_blank"
               rel="noreferrer"
               className="p-5 rounded-2xl bg-surface border border-border hover:border-border-hover hover:bg-surface-hover transition-all duration-200 flex items-center justify-between group shadow-sm"
@@ -61,7 +61,7 @@ export default function Contact() {
             </a>
 
             <a 
-              href="https://github.com"
+              href="https://github.com/olimpiu98"
               target="_blank"
               rel="noreferrer"
               className="p-5 rounded-2xl bg-surface border border-border hover:border-border-hover hover:bg-surface-hover transition-all duration-200 flex items-center justify-between group shadow-sm"

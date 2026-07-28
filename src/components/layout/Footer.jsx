@@ -22,13 +22,13 @@ export default function Footer() {
           <a href="https://x.com/tic_oli" target="_blank" rel="noreferrer" className="text-muted hover:text-text transition-colors" aria-label="X">
             <Icon name="XSocial" size={16} />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-muted hover:text-text transition-colors" aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/olimpiu-ticudean" target="_blank" rel="noreferrer" className="text-muted hover:text-text transition-colors" aria-label="LinkedIn">
             <Icon name="Linkedin" size={18} />
           </a>
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="text-muted hover:text-text transition-colors" aria-label="GitHub">
+          <a href="https://github.com/olimpiu98" target="_blank" rel="noreferrer" className="text-muted hover:text-text transition-colors" aria-label="GitHub">
             <Icon name="Github" size={18} />
           </a>
-          <a href="mailto:ticudean.o@gmail.com" className="text-muted hover:text-text transition-colors" aria-label="Email">
+          <a href={`mailto:${import.meta.env.VITE_ADMIN_EMAIL || 'contact@ticudean.com'}`} className="text-muted hover:text-text transition-colors" aria-label="Email">
             <Icon name="Mail" size={18} />
           </a>
 
