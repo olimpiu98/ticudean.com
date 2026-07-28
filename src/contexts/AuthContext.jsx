@@ -53,6 +53,12 @@ export function AuthProvider({ children }) {
       await signInWithPopup(auth, googleProvider);
     } catch (error) {
       console.error("Google login failed", error);
+      if (error?.code === 'auth/unauthorized-domain') {
+        alert("Google sign-in is blocked because this domain is not authorized in Firebase Auth. Add ticudean.com and www.ticudean.com in Firebase Console -> Authentication -> Settings -> Authorized domains.");
+        return;
+      }
+
+      alert("Google login failed. Check Firebase Auth settings and browser console for details.");
     }
   };
 

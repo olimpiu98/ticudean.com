@@ -111,13 +111,10 @@ export default function Technologies() {
             <div>
               <div className="section-label mb-4">
                 <h2 className="section-heading">
-                  I use the following <strong>Technologies</strong>
+                  What My Programming Skills Include?
                 </h2>
               </div>
 
-              <h3 className="text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight tracking-tight">
-                What My Programming Skills Include?
-              </h3>
 
               <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-md">
                 I develop simple, intuitive and responsive user interfaces that help users get things done with less effort and time using my core programming languages, developer tools, and cloud platforms.

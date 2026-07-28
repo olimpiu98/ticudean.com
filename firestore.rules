@@ -2,12 +2,74 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    
-    // Allow public read access to all portfolio documents
-    // Allow write access to any authenticated user (Admin)
-    match /{document=**} {
-      allow read: if true;
-      allow write: if request.auth != null;
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.email == 'olimpiu.ticudean@gmail.com';
+    }
+
+    function isMemberOwner(memberId) {
+      return isSignedIn() && request.auth.uid == memberId;
+    }
+
+    function isPublicPortfolioSection(section) {
+      return section in ['projects', 'certifications', 'tech_stack'];
+    }
+
+    function isStringOrNull(value) {
+      return value is string || value == null;
+    }
+
+    function isValidMemberDoc(memberId) {
+      return request.resource.data.keys().hasOnly(['displayName', 'email', 'photoURL', 'role', 'lastLogin'])
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.role == (isAdmin() ? 'Admin' : 'Member')
+        && isStringOrNull(request.resource.data.displayName)
+        && isStringOrNull(request.resource.data.photoURL)
+        && request.resource.data.lastLogin is timestamp;
+    }
+
+    function isValidProjectDoc() {
+      return request.resource.data.keys().hasOnly(['id', 'title', 'image', 'imageUrl', 'gradient', 'desc', 'tags', 'features', 'order', 'num'])
+        && request.resource.data.title is string
+        && isStringOrNull(request.resource.data.image)
+        && isStringOrNull(request.resource.data.imageUrl)
+        && isStringOrNull(request.resource.data.gradient)
+        && isStringOrNull(request.resource.data.desc)
+        && request.resource.data.tags is list
+        && request.resource.data.features is list
+        && request.resource.data.order is int
+        && request.resource.data.num is string;
+    }
+
+    function isValidCredentialDoc() {
+      return request.resource.data.keys().hasOnly(['id', 'category', 'order', 'badge', 'title', 'issuer', 'date', 'desc'])
+        && isStringOrNull(request.resource.data.category)
+        && request.resource.data.order is int
+        && isStringOrNull(request.resource.data.badge)
+        && request.resource.data.title is string
+        && isStringOrNull(request.resource.data.issuer)
+        && isStringOrNull(request.resource.data.date)
+        && isStringOrNull(request.resource.data.desc);
+    }
+
+    match /members/{memberId} {
+      allow get: if isAdmin() || isMemberOwner(memberId);
+      allow list: if isAdmin();
+      allow create, update: if (isAdmin() || isMemberOwner(memberId)) && isValidMemberDoc(memberId);
+      allow delete: if isAdmin();
+    }
+
+    match /personal_data/{section}/items/{itemId} {
+      allow read: if isPublicPortfolioSection(section);
+      allow create, update: if isAdmin() && (
+        (section == 'projects' && isValidProjectDoc()) ||
+        (section == 'certifications' && isValidCredentialDoc()) ||
+        section == 'tech_stack'
+      );
+      allow delete: if isAdmin() && isPublicPortfolioSection(section);
     }
 
   }
