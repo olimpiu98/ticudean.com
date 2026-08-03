@@ -3,7 +3,7 @@
  * Ensures native window.print() and Save as PDF works 100% perfectly without modal interference.
  */
 export function openPrintableResume() {
-  const win = window.open('', '_blank');
+  const win = window.open("", "_blank");
   if (!win) return;
 
   const htmlContent = `<!DOCTYPE html>
@@ -217,7 +217,8 @@ export function openPrintableResume() {
         font-size: 9.5pt;
     }
 
-    .contact-info a {
+    .contact-info a,
+    .contact-info .contact-item {
         color: #333;
         text-decoration: none;
         display: flex;
@@ -605,41 +606,44 @@ export function openPrintableResume() {
   <div class="document">
     <h1>Olimpiu Ticudean</h1>
     <div class="contact-info">
-      <a href="mailto:contact@ticudean.com">
+      <a href="mailto:ticudean.o@gmail.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-        contact@ticudean.com
+        ticudean.o@gmail.com
       </a>
       <span class="separator">|</span>
       <a href="https://linkedin.com/in/olimpiu-ticudean" target="_blank">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        LinkedIn
+        olimpiu-ticudean
       </a>
       <span class="separator">|</span>
       <a href="https://github.com/olimpiu98" target="_blank">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-        GitHub
+        olimpiu98
       </a>
       <span class="separator">|</span>
       <a href="https://ticudean.com" target="_blank">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
         ticudean.com
       </a>
+      <span class="separator">|</span>
+      <span class="contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        Runcorn, UK
+      </span>
     </div>
 
     <!-- SUMMARY -->
     <section class="cv-section">
       <h2>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/><path d="M12 14c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z"/></svg>
         SUMMARY
         <label class="section-toggle"><input type="checkbox" checked onchange="toggleSection(this)" /><span class="slider"></span></label>
       </h2>
-      <p>BSc (Hons) Computing graduate with practical experience in web development through personal projects and work. Skilled in JavaScript, TypeScript, React, and Node.js, with additional certifications in cloud technologies. I enjoy building modern web applications, solving technical problems, and continuously improving my skills as a software developer.</p>
+      <p>BSc (Hons) Computing graduate with 18 months of hands-on web development experience delivering client projects alongside personal full-stack applications. Self-taught developer who transitioned into tech while working full-time in logistics, a background that directly inspired my university dissertation: a custom, full-stack Quality Control System built with React, Node.js, and MySQL. Proficient in TypeScript, React, and REST APIs, with practical exposure to Microsoft Azure and the Solana/Web3 development ecosystem. Adaptable, curious about how systems work under the hood, and actively seeking a full-time Web/Software Developer role.</p>
     </section>
 
     <!-- PROFESSIONAL EXPERIENCE -->
     <section class="cv-section">
       <h2>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h20v14H2z"/><path d="M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/><path d="M6 21v-2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
         PROFESSIONAL EXPERIENCE
         <label class="section-toggle"><input type="checkbox" checked onchange="toggleSection(this)" /><span class="slider"></span></label>
       </h2>
@@ -647,17 +651,17 @@ export function openPrintableResume() {
         <div class="entry-header"><span class="entry-title">Lidl Great Britain Limited</span><span class="entry-meta">October 2018 &mdash; Present | Runcorn, UK</span></div>
         <span class="entry-sub">Warehouse Operative</span>
         <ul class="project-details">
-          <li>Operated in a dynamic environment where clear communication and coordination is essential to achieve daily targets.</li>
-          <li>Utilised an internal Quality Control System (QCS) daily to monitor stock quality and quickly communicate with Head Office.</li>
-          <li>Daily interaction with the logistics software inspired me to design the architecture and development of a custom full-stack Quality Control System project for my university dissertation.</li>
+          <li>Dynamic environment where clear communication and coordination are essential to achieve daily targets.</li>
+          <li>Utilised an internal Quality Control System to monitor stock quality and communicate with the Head Office.</li>
+          <li>Daily interaction with the logistics software inspired me to design the architecture and development of a custom full-stack Quality Control System application for my university dissertation.</li>
         </ul>
       </div>
       <div class="project-entry">
         <div class="entry-header"><span class="entry-title">Reea Digital</span><span class="entry-meta">Jun 2021 &mdash; Dec 2022 | Remote, RO</span></div>
-        <span class="entry-sub">Junior Web Developer (part-time)</span>
+        <span class="entry-sub">Entry-level Web Developer (part-time)</span>
         <ul class="project-details">
-          <li>Collaborated remotely with a team of 4 developers to build modern, interactive web applications using HTML, CSS, and JavaScript.</li>
-          <li>Contributed to the development of multiple websites such as indoor cycling studio and an excavation company, focusing on interactive features, clean user interfaces, and responsive design.</li>
+          <li>Collaborated remotely with a team of 3 developers to build production-ready modern web applications.</li>
+          <li>Contributed to the development of multiple websites such as an indoor cycling studio and a construction company, focusing on interactive features, clean user interfaces, and responsive design.</li>
         </ul>
       </div>
     </section>
@@ -665,7 +669,6 @@ export function openPrintableResume() {
     <!-- PROJECTS -->
     <section class="cv-section">
       <h2>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v13H3z"/><path d="M3 7l9-4 9 4"/></svg>
         PROJECTS
         <label class="section-toggle"><input type="checkbox" checked onchange="toggleSection(this)" /><span class="slider"></span></label>
       </h2>
@@ -673,23 +676,14 @@ export function openPrintableResume() {
         <div class="project-header"><span class="project-title">QCS - Quality Control System</span></div>
         <span class="project-tech"><strong>Tech Stack:</strong> React, Node.js, Express.js, MySQL, REST API</span>
         <ul class="project-details">
-          <li>Built a full-stack web application featuring a React frontend and a Node.js/Express backend with a RESTful API.</li>
+          <li>A full-stack web application featuring a React frontend and a Node.js/Express backend deployed on Render.</li>
           <li>Enabled users to manage and monitor information in real time with a clean, responsive UI.</li>
-          <li>Architected separate deployment of client and server layers for scalability and maintainability.</li>
-        </ul>
-      </div>
-      <div class="project-entry">
-        <div class="project-header"><span class="project-title">Coinlist - Cryptocurrency Price Tracker</span></div>
-        <span class="project-tech"><strong>Tech Stack:</strong> React, JavaScript, REST API</span>
-        <ul class="project-details">
-          <li>Developed a React application that fetches and displays live cryptocurrency data via a public API.</li>
-          <li>Implemented a responsive, filterable coin list with real-time price updates.</li>
-          <li>Demonstrated proficiency in RESTful API integration, component-based architecture, and state management.</li>
+          <li>Architected separate deployments for the client and server layers to improve scalability and maintainability.</li>
         </ul>
       </div>
       <div class="project-entry">
         <div class="project-header"><span class="project-title">Comets of Web3 - Blockchain Development</span></div>
-        <span class="project-tech"><strong>Tech Stack:</strong> Solana, Typescript, Rust</span>
+        <span class="project-tech"><strong>Tech Stack:</strong> Solana, TypeScript, Rust</span>
         <ul class="project-details">
           <li>Developed a blockchain project for Solana as part of the Comets of Web3 developer programme.</li>
           <li>Gained practical experience in low-level systems programming and smart contract integration.</li>
@@ -701,20 +695,18 @@ export function openPrintableResume() {
     <!-- EDUCATION -->
     <section class="cv-section">
       <h2>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
         EDUCATION
         <label class="section-toggle"><input type="checkbox" checked onchange="toggleSection(this)" /><span class="slider"></span></label>
       </h2>
       <div class="entry"><div class="entry-header"><span class="entry-title">Arden University</span><span class="entry-meta">2021 &mdash; 2025 | Manchester, UK</span></div><span class="entry-sub">BSc (Hons) Computing with Foundation Year</span></div>
       <div class="entry"><div class="entry-header"><span class="entry-title">Comets of Web3</span><span class="entry-meta">2024 | Remote, UK</span></div><span class="entry-sub">Blockchain Developer Program</span></div>
       <div class="entry"><div class="entry-header"><span class="entry-title">OpenClassrooms</span><span class="entry-meta">2022 &mdash; 2023 | Remote, UK</span></div><span class="entry-sub">Front End Web Development</span></div>
-      <div class="entry"><div class="entry-header"><span class="entry-title">Technologic School "Gheorghe Sincai"</span><span class="entry-meta">2013 &mdash; 2017 | Mures, RO</span></div><span class="entry-sub">CAD/CADD Drafting and Design Technician</span></div>
+      <div class="entry"><div class="entry-header"><span class="entry-title">Technological High School "Gheorghe Sincai"</span><span class="entry-meta">2013 &mdash; 2017 | Mures, RO</span></div><span class="entry-sub">CAD/CADD Drafting and Design Technician</span></div>
     </section>
 
     <!-- CERTIFICATIONS -->
     <section class="cv-section">
       <h2>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
         CERTIFICATIONS
         <label class="section-toggle"><input type="checkbox" checked onchange="toggleSection(this)" /><span class="slider"></span></label>
       </h2>
@@ -731,7 +723,6 @@ export function openPrintableResume() {
     <!-- TECHNICAL EXPERIENCE & SKILLS -->
     <section class="cv-section">
       <h2>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a9 9 0 0 0 .6-3 9 9 0 0 0-.6-3"/><path d="M4.6 15a9 9 0 0 1-.6-3 9 9 0 0 1 .6-3"/><path d="M12 21v-3"/><path d="M12 6V3"/></svg>
         TECHNICAL EXPERIENCE & SKILLS
         <label class="section-toggle"><input type="checkbox" checked onchange="toggleSection(this)" /><span class="slider"></span></label>
       </h2>
@@ -748,7 +739,6 @@ export function openPrintableResume() {
     <!-- LANGUAGES -->
     <section class="cv-section">
       <h2>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         LANGUAGES
         <label class="section-toggle"><input type="checkbox" checked onchange="toggleSection(this)" /><span class="slider"></span></label>
       </h2>

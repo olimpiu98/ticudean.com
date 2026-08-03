@@ -110,7 +110,7 @@ export default function Technologies() {
           <div className="w-full lg:w-5/12 flex flex-col justify-between self-stretch">
             <div>
               <div className="section-label mb-4">
-                <h2 className="section-heading">
+                <h2 className="text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight tracking-tight">
                   What My Programming Skills Include?
                 </h2>
               </div>
